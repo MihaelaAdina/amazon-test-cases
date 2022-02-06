@@ -34,6 +34,11 @@ class AmazonProduct(unittest.TestCase):
 
         driver.find_element(By.ID, 'add-to-cart-button').click()
 
+        driver.find_element(By.ID, 'nav-cart').click()
+
+        delete_button = driver.find_element(By.XPATH, '(//div[@class="a-row sc-action-links"]/span/span/input[@data-action="delete"])')
+        delete_button.click()
+
     # cleanup method called after every test performed
     def tearDown(self):
         self.driver.close()
