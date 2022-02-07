@@ -23,8 +23,7 @@ class AmazonProduct(unittest.TestCase):
         self.assertEqual(select_searchbar.tag_name, 'input')
 
         select_searchbar.send_keys('iphone charger' + Keys.ENTER)
-
-        # aici se electeaza al 4-lea element si se da click pe el
+        
         driver.find_element(By.XPATH, '(//h2[@class="a-size-mini a-spacing-none a-color-base s-line-clamp-2"]/a)[4]').click()
 
         select_products = Select(driver.find_element(By.ID, 'quantity'))
